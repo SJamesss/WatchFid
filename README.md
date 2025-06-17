@@ -3,7 +3,7 @@
 ## 📦 Code source
 
 Le code source complet est disponible sur GitHub :  
-[lien_vers_le_repo_GitHub](https://github.com/ton-utilisateur/WatchFid)  
+[lien_vers_le_repo_GitHub](https://github.com/SJamesss/WatchFid)  
 *(Remplace ce lien par l'URL réelle de ton dépôt)*
 
 ---
@@ -29,7 +29,7 @@ Le code source complet est disponible sur GitHub :
 ### 1. **Cloner le dépôt**
 
 ```bash
-git clone https://github.com/ton-utilisateur/WatchFid.git
+git clone https://github.com/SJamesss/WatchFid
 cd WatchFid
 ```
 
