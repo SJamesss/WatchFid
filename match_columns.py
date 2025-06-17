@@ -8,9 +8,9 @@ def align_breguet_daytona_data():
     """
     
     # Fichiers fixes
-    breguet_file = "breguet_json_details_temp.xlsx"
-    daytona_file = "Daytona-db-sample.xlsx"
-    output_file = "watches_details.xlsx"
+    breguet_file = "EXCEL/breguet_json_details_temp.xlsx"
+    daytona_file = "EXCEL/Daytona-db-sample.xlsx"
+    output_file = "EXCEL/watches_details.xlsx"
     
     # Lecture des fichiers
     breguet_df = pd.read_excel(breguet_file)

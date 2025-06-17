@@ -21,7 +21,7 @@ def process_watches(api_key, input_file="watches_details.xlsx", max_items=300, s
     client = openai.OpenAI(api_key=api_key)
 
     # Vérifier l'existence des fichiers de prompt
-    prompt_files = ['extraction_prompt_part1.md', 'extraction_prompt_part2.md']
+    prompt_files = ['PROMPT/extraction_prompt_part1.md', 'PROMPT/extraction_prompt_part2.md']
     for file in prompt_files:
         if not os.path.exists(file):
             print(f"Erreur: Le fichier {file} est requis mais n'existe pas.")
@@ -29,10 +29,10 @@ def process_watches(api_key, input_file="watches_details.xlsx", max_items=300, s
 
     # Charger les prompts
     try:
-        with open('extraction_prompt_part1.md', 'r', encoding='utf-8') as f:
+        with open('PROMPT/extraction_prompt_part1.md', 'r', encoding='utf-8') as f:
             md_part1 = f.read()
         
-        with open('extraction_prompt_part2.md', 'r', encoding='utf-8') as f:
+        with open('PROMPT/extraction_prompt_part2.md', 'r', encoding='utf-8') as f:
             md_part2 = f.read()
     except Exception as e:
         print(f"Erreur lors du chargement des prompts: {e}")
@@ -220,7 +220,7 @@ def process_watches(api_key, input_file="watches_details.xlsx", max_items=300, s
     # Retourner le DataFrame final (déjà sauvegardé)
     return watches_details
 
-def show_processing_summary(input_file="watches_details.xlsx"):
+def show_processing_summary(input_file="EXCEL/watches_details.xlsx"):
     """
     Affiche un résumé du statut de traitement
     """

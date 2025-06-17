@@ -52,7 +52,7 @@ def scrape_brand_links(brand_name, max_links=None):
     print(f"Nombre total de liens récupérés pour {brand_name}: {len(all_watch_links)}")
     return all_watch_links
 
-def save_links_to_excel(new_links, excel_file='breguet_watch_links.xlsx'):
+def save_links_to_excel(new_links, excel_file='EXCEL/breguet_watch_links.xlsx'):
     existing_links = set()
     if os.path.exists(excel_file):
         df_existing = pd.read_excel(excel_file)

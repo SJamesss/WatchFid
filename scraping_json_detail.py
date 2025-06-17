@@ -10,8 +10,8 @@ from fake_useragent import UserAgent
 import os
 
 # === CONFIGURATION ===
-EXCEL_LINKS_FILE = 'breguet_watch_links.xlsx'  # Fichier généré par scraping_url.py
-TEMP_OUTPUT_FILE = 'breguet_json_details_temp.xlsx'
+EXCEL_LINKS_FILE = 'EXCEL/breguet_watch_links.xlsx'  # Fichier généré par scraping_url.py
+TEMP_OUTPUT_FILE = 'EXCEL/breguet_json_details_temp.xlsx'
 OUTPUT_EXCEL_FILE = TEMP_OUTPUT_FILE  # Le fichier temp devient le fichier principal
 BASE_URL = 'https://everywatch.com/breguet'
 BATCH_SIZE = 25  # Nombre de montres par batch
