@@ -34,6 +34,7 @@ def main():
     scraping_url.save_links_to_excel(links)
     scraping_json_detail.main() 
     match_columns.align_breguet_daytona_data()
+    match_columns.check_file_status()
     description_analysis.process_watches(api_key, max_items=max_items)
     
     print("Terminé!")

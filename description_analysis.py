@@ -4,7 +4,7 @@ import openai
 import time
 import os
 
-def process_watches(api_key, input_file="watches_details.xlsx", max_items=300, sleep_time=1.0, save_interval=25):
+def process_watches(api_key, input_file="EXCEL/watches_details.xlsx", max_items=300, sleep_time=1.0, save_interval=25):
     """
     Traite les descriptions de montres et extrait les données structurées
     
@@ -269,8 +269,7 @@ if __name__ == "__main__":
         print("Traitement annulé.")
         exit()
     
-    API_KEY = "API_KEY"
-    
+    API_KEY = "API_KEY_HERE"
     results = process_watches(API_KEY)
     
     if results is not None:

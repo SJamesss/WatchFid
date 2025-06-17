@@ -4,8 +4,6 @@ import time
 import random
 import re
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from fake_useragent import UserAgent
 import os
 
@@ -21,6 +19,41 @@ ua = UserAgent()
 
 # === FONCTIONS UTILITAIRES ===
 def get_build_id(url):
+    """Récupère le buildId Next.js depuis la page (sans Selenium)"""
+    try:
+        ua = UserAgent()
+        headers = {
+            'User-Agent': ua.random,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+        }
+        
+        response = requests.get(url, headers=headers, timeout=20)
+        if response.status_code != 200:
+            return None
+            
+        content = response.text
+        
+        # Essayer différents patterns
+        patterns = [
+            r'"buildId":"([^"]+)"',
+            r'"buildId"\s*:\s*"([^"]+)"',
+            r'/_next/static/([a-zA-Z0-9_-]{8,})/',
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, content)
+            if match:
+                build_id = match.group(1)
+                if len(build_id) >= 8:
+                    return build_id
+                    
+        return None
+        
+    except Exception:
+        return None
+
+
     """Récupère le buildId Next.js depuis la page principale (Selenium headless)."""
     options = Options()
     options.add_argument('--headless')

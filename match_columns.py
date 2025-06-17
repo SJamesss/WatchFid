@@ -161,7 +161,7 @@ def align_breguet_daytona_data():
     return aligned_df
 
 
-def check_file_status(output_file="watches_details.xlsx"):
+def check_file_status(output_file="EXCEL/watches_details.xlsx"):
     """
     Vérifie le statut du fichier watches_details.xlsx pour le traitement par description_analysis.py
     """
