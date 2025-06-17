@@ -35,7 +35,7 @@ cd WatchFid
 
 ### 2. **Configurer la clé API OpenAI (optionnel)**
 
-Créez un fichier `.env` à la racine du projet avec votre clé API :
+Créez un fichier `.env` à partir du fichier `.env.example` à la racine du projet avec votre clé API :
 
 ```
 OPENAI_API_KEY=votre_clé_api_openai
@@ -51,7 +51,7 @@ docker build -t watchfid .
 
 ```bash
 # Windows
-docker run -it -v %cd%:/app watchfid
+docker run -it -v .:/app watchfid
 
 # Mac/Linux
 docker run -it -v $(pwd):/app watchfid
